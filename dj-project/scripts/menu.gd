@@ -38,6 +38,8 @@ func _process(delta: float) -> void:
 func clear_memory() ->  void:
 	GameState.player_position=Vector2.ZERO
 	GameClock.reset_clock()
+	Global.clear_data()
+	FollowerManager.clear_data()
 	var posts_file = FileAccess.open(POSTS_FILE_PATH, FileAccess.WRITE)
 	if posts_file:
 		posts_file.store_string("")  # or "[]" if it's meant to be a list

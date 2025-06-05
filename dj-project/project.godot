@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GameState="*res://scripts/game_state.gd"
 GameClock="*res://scripts/game_clock.gd"
+Global="*res://scripts/global.gd"
+FollowerManager="*res://scripts/follower_manager.gd"
 
 [input]
 

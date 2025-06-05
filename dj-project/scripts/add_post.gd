@@ -73,6 +73,9 @@ func _on_generate_post_pressed() -> void:
 	print("Generated post: " + post)
 	save_post_to_file(post)
 	check_if_can_post()
+	
+	var total_gain := calculate_follower_gain(traits)
+	FollowerManager.schedule_gain(total_gain)
 
 func save_post_to_file(post_text: String) -> void:
 	post_counter += 1
@@ -142,3 +145,17 @@ func check_if_can_post() -> void:
 		else:
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.text = "Generate Post"
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.disabled = false
+
+func calculate_follower_gain(traits: Dictionary) -> int:
+	var base_gain := 100.0  # Base number of followers
+	var total_gain := 0.0
+
+	# Negativity is used to scale follower gain
+	var negativity: float = clamp(traits["controversy"] - traits["constructiveness"], 0.0, 10.0)
+	var negativity_multiplier: float = 1.0 + (negativity / 10.0)
+
+
+	# Total adjusted gain (e.g., 20 * 1.5 if negativity is 5)
+	total_gain = base_gain * negativity_multiplier
+	
+	return total_gain
