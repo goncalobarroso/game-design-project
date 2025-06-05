@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk0n1qc2i4dpv"]
+
+[ext_resource type="AudioStream" uid="uid://ta4sofn25bws" path="res://sound/music/menu.mp3" id="1_tn5dr"]
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_tn5dr")
+autoplay = true
+parameters/looping = true
