@@ -90,18 +90,13 @@ func update_reaction_ui():
 	var dislike_button = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Dislike
 	
 	if reaction == "like":
-		like_button.modulate = Color(0.2, 1, 0.2)  # Green highlight
-		dislike_button.modulate = Color(1, 1, 1)   # Reset
+		like_button.modulate = Color(0, 0, 0)  # Green highlight
 		like_button.disabled = true
 		dislike_button.disabled = true
 	elif reaction == "dislike":
-		like_button.modulate = Color(1, 1, 1)
-		dislike_button.modulate = Color(1, 0.2, 0.2)  # Red highlight
+		dislike_button.modulate = Color(0, 0, 0)  # Red highlight
 		like_button.disabled = true
 		dislike_button.disabled = true
-	elif reaction == "none":
-		like_button.modulate = Color(1, 1, 1)
-		dislike_button.modulate = Color(1, 1, 1)
 
 func calculate_follower_gain(traits: Dictionary, reaction: String) -> int:
 	var base_gain := 100.0  # Base number of followers

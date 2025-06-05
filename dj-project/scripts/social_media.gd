@@ -1,7 +1,7 @@
 extends Control
 
 @onready var post_container = $PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer
-@onready var footer_label = $PanelContainer/VBoxContainer/Footer/Label
+@onready var footer_label = $PanelContainer/VBoxContainer/Footer/MarginContainer/Label
 
 var PostScene = preload("res://scenes/post.tscn")
 var YourPostsScene = preload("res://scenes/your_post.tscn")

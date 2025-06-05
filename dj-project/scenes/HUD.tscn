@@ -11,11 +11,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qpvh6")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 586.0
+offset_right = 1693.0
+offset_bottom = 636.0
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 115.0
+offset_top = 589.0
 offset_right = 195.0
-offset_bottom = 23.0
+offset_bottom = 612.0
 scale = Vector2(2.01212, 2.00543)
 theme_override_font_sizes/font_size = 8
 text = "Day 0, 00h"
@@ -25,8 +33,9 @@ vertical_alignment = 1
 [node name="FollowerLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 441.0
+offset_top = 589.0
 offset_right = 521.0
-offset_bottom = 23.0
+offset_bottom = 612.0
 scale = Vector2(2.01212, 2.00543)
 theme_override_font_sizes/font_size = 8
 text = "Followers"
