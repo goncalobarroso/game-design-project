@@ -1,7 +1,7 @@
 extends Control
 
 @onready var post_container = $PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer
-@onready var footer_label = $PanelContainer/VBoxContainer/Footer/Label
+@onready var footer_label = $PanelContainer/VBoxContainer/Footer/MarginContainer/Label
 
 var PostScene = preload("res://scenes/post.tscn")
 var YourPostsScene = preload("res://scenes/your_post.tscn")
@@ -34,11 +34,12 @@ func load_posts_from_json(json_path: String, flag: bool):
 				var username = post.get("user", "Unknown")
 				var content = post.get("content", "")
 				var id = post.get("id", "0")
+				var traits = post.get("traits")
 				if flag:
-					var traits = post.get("traits")
+					
 					add_your_post(username, content, "res://images/placeholder2.jpg", id, traits)
 				else:
-					add_post(username, content, "res://images/placeholder2.jpg", id)
+					add_post(username, content, "res://images/placeholder2.jpg", id, traits)
 		else:
 			print("Error: JSON is not an array.")
 	else:
@@ -50,10 +51,10 @@ func add_your_post(username: String, text: String, image_path: String, id: Strin
 		post_instance.set_user_data(username, text, image_path, id, traits)
 		post_container.add_child(post_instance)
 
-func add_post(username: String, text: String, image_path: String, id: String):
+func add_post(username: String, text: String, image_path: String, id: String, traits: Dictionary):
 		var post_instance = PostScene.instantiate()
 		
-		post_instance.set_user_data(username, text, image_path, id)
+		post_instance.set_user_data(username, text, image_path, id, traits)
 		post_container.add_child(post_instance)
 
 func add_add_post():

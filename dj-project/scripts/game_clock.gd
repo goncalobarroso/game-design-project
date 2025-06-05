@@ -15,11 +15,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_accumulator += delta * time_speed
-
+	
 	if time_accumulator >= 1.0:
 		time_accumulator -= 1.0
 		advance_time()
-
+	
 func advance_time():
 	FollowerManager.tick_hour()
 	hour += 1
@@ -36,8 +36,8 @@ func advance_day():
 
 func get_time_string() -> String:
 	if hour>12:
-		return "Day %d - %01d PM" % [day, hour-12]
-	return "Day %d - %01d AM" % [day, hour]
+		return "Day %d, %01d PM" % [day, hour-12]
+	return "Day %d, %01d AM" % [day, hour]
 
 func reset_clock():
 	day = 1

@@ -147,7 +147,6 @@ func check_if_can_post() -> void:
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.text = "Generate Post"
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.disabled = false
 		$PanelContainer/MarginContainer/VBoxContainer/Label2.text = "Posts available: " + str(POSTS_PER_DAY - count)
-		print("THIS IS HAPENING!")
 		
 func calculate_follower_gain(traits: Dictionary) -> int:
 	var base_gain := 100.0  # Base number of followers

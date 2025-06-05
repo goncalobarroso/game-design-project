@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dxxpc5g6caqio"]
+
+[ext_resource type="FontFile" uid="uid://dxhnghpbjxdrw" path="res://fonts/PressStart2P-Regular.ttf" id="1_hxewf"]
+
+[resource]
+default_font = ExtResource("1_hxewf")

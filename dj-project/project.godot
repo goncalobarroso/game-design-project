@@ -22,6 +22,10 @@ GameClock="*res://scripts/game_clock.gd"
 Global="*res://scripts/global.gd"
 FollowerManager="*res://scripts/follower_manager.gd"
 
+[gui]
+
+theme/custom="uid://dxxpc5g6caqio"
+
 [input]
 
 left={

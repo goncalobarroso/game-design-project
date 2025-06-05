@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://fer8gkeix5td"]
+[gd_scene load_steps=6 format=3 uid="uid://fer8gkeix5td"]
 
 [ext_resource type="Script" uid="uid://lt504cja7kxc" path="res://scripts/your_post.gd" id="1_2ygae"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epv1v"]
-bg_color = Color(0.901902, 0.362704, 0.748054, 1)
+bg_color = Color(0.666667, 0.996078, 0.733333, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_epv1v"]
 font_size = 12
-font_color = Color(0.478213, 0.697441, 0.962585, 1)
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ax5sd"]
 font_size = 12
-font_color = Color(0.390954, 0.201241, 0.52865, 1)
+font_color = Color(0.192157, 0.670588, 0.34902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ygae"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Post" type="Control"]
 layout_mode = 3
@@ -71,5 +74,6 @@ autowrap_mode = 3
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Controversy: 0 Emotionality: 0 Constructiveness: 0"
+label_settings = SubResource("LabelSettings_2ygae")
 horizontal_alignment = 1
 vertical_alignment = 1

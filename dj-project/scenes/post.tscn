@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://od3t75iomd2c" path="res://scripts/post.gd" id="1_epv1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epv1v"]
-bg_color = Color(0.901902, 0.362704, 0.748054, 1)
+bg_color = Color(0.666138, 0.996199, 0.734506, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_epv1v"]
 font_size = 12
-font_color = Color(0.478213, 0.697441, 0.962585, 1)
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ax5sd"]
 font_size = 12
-font_color = Color(0.390954, 0.201241, 0.52865, 1)
+font_color = Color(0.192157, 0.670588, 0.34902, 1)
 
 [node name="Post" type="Control"]
 layout_mode = 3
@@ -76,11 +76,13 @@ alignment = 1
 
 [node name="Like" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.192157, 0.670588, 0.34902, 1)
 text = "Like"
 icon_alignment = 1
 
 [node name="Dislike" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.192157, 0.670588, 0.34902, 1)
 text = "Dislike"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Like" to="." method="_on_like_pressed"]

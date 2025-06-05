@@ -1,18 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b11dl65fybb0q"]
+[gd_scene load_steps=4 format=3 uid="uid://b11dl65fybb0q"]
 
 [ext_resource type="Texture2D" uid="uid://sxv7i4iiyh23" path="res://images/placeholder2.jpg" id="1_c6die"]
 [ext_resource type="Script" uid="uid://cno2wmvq5ioue" path="res://scripts/add_post.gd" id="1_gsi8d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq7fg"]
-bg_color = Color(0.901902, 0.362704, 0.748054, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_c6die"]
-font_size = 12
-font_color = Color(0.478213, 0.697441, 0.962585, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_588hm"]
-font_size = 12
-font_color = Color(0.390954, 0.201241, 0.52865, 1)
+bg_color = Color(0.666667, 0.996078, 0.733333, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,11 +32,13 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Posts available: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -64,24 +58,9 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("1_c6die")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="username" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "<your username>"
-label_settings = SubResource("LabelSettings_c6die")
-
-[node name="post" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-text = "<post text>
-"
-label_settings = SubResource("LabelSettings_588hm")
-autowrap_mode = 3
-
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Customize post traits"
 horizontal_alignment = 1
 
@@ -93,11 +72,12 @@ layout_mode = 2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Controversy"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -105,6 +85,7 @@ vertical_alignment = 1
 [node name="ControversyValue" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -128,6 +109,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Emotionality"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -135,6 +117,7 @@ vertical_alignment = 1
 [node name="EmotionalityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -158,6 +141,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Constructiveness"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -165,6 +149,7 @@ vertical_alignment = 1
 [node name="ContructivenessLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
