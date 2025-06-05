@@ -14,6 +14,7 @@ var sentence_data := {}
 
 const POSTS_FILE_PATH := "res://data/your_posts.json"
 const POST_ID_FILE_PATH := "res://data/post_id_counter.txt"
+const POSTS_PER_DAY := 3
 
 var post_counter: int = 0
 
@@ -73,6 +74,9 @@ func _on_generate_post_pressed() -> void:
 	print("Generated post: " + post)
 	save_post_to_file(post)
 	check_if_can_post()
+	
+	var total_gain := calculate_follower_gain(traits)
+	FollowerManager.schedule_gain(total_gain)
 
 func save_post_to_file(post_text: String) -> void:
 	post_counter += 1
@@ -136,9 +140,25 @@ func check_if_can_post() -> void:
 			if post.has("day") and post["day"] == current_day:
 				count += 1
 
-		if count > 2:
+		if count > POSTS_PER_DAY-1:
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.text = "Wait for Day " + str(current_day + 1) + " to post!"
-			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.disabled = true
+			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.disabled = true	
 		else:
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.text = "Generate Post"
 			$PanelContainer/MarginContainer/VBoxContainer/GeneratePost.disabled = false
+		$PanelContainer/MarginContainer/VBoxContainer/Label2.text = "Posts available: " + str(POSTS_PER_DAY - count)
+		print("THIS IS HAPENING!")
+		
+func calculate_follower_gain(traits: Dictionary) -> int:
+	var base_gain := 100.0  # Base number of followers
+	var total_gain := 0.0
+
+	# Negativity is used to scale follower gain
+	var negativity: float = clamp(traits["controversy"] - traits["constructiveness"], 0.0, 10.0)
+	var negativity_multiplier: float = 1.0 + (negativity / 10.0)
+
+
+	# Total adjusted gain (e.g., 20 * 1.5 if negativity is 5)
+	total_gain = base_gain * negativity_multiplier
+	
+	return total_gain

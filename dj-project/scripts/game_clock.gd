@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		advance_time()
 
 func advance_time():
+	FollowerManager.tick_hour()
 	hour += 1
 	if hour >= 24:
 		hour = 0
