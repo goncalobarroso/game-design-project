@@ -36,8 +36,8 @@ func advance_day():
 
 func get_time_string() -> String:
 	if hour>12:
-		return "Day %d - %01d PM" % [day, hour-12]
-	return "Day %d - %01d AM" % [day, hour]
+		return "Day %d, %01d PM" % [day, hour-12]
+	return "Day %d, %01d AM" % [day, hour]
 
 func reset_clock():
 	day = 1

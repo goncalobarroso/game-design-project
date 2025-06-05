@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://65j3mletlqhi" path="res://scripts/social_media.gd" id="1_b2133"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b2133"]
-font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbcdr"]
-font_size = 24
 
 [node name="Social Media" type="Control"]
 layout_mode = 3
@@ -45,6 +43,7 @@ layout_mode = 2
 
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer/Header/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "x"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Header/HBoxContainer2"]
@@ -65,15 +64,18 @@ alignment = 1
 
 [node name="Feed" type="Button" parent="PanelContainer/VBoxContainer/Header/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Feed"
 
 [node name="AddPost" type="Button" parent="PanelContainer/VBoxContainer/Header/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Add post
 "
 
 [node name="Posts" type="Button" parent="PanelContainer/VBoxContainer/Header/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Your posts"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
