@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwl68f7uhgifh"]
+[gd_scene load_steps=19 format=3 uid="uid://dwl68f7uhgifh"]
 
 [ext_resource type="PackedScene" uid="uid://de8o1scq8owuy" path="res://scenes/player.tscn" id="1_p05b1"]
 [ext_resource type="Script" uid="uid://digdttmqjkq7r" path="res://scripts/work.gd" id="1_wbtw0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bu16mij7g6foi" path="res://scripts/area_trigger_door.gd" id="6_6qc1p"]
 [ext_resource type="PackedScene" uid="uid://ccdqffwm6isho" path="res://scenes/scene_menu.tscn" id="7_6qc1p"]
 [ext_resource type="AudioStream" uid="uid://c8edpwolqkmp6" path="res://sound/ambiente/office.mp3" id="11_aso24"]
+[ext_resource type="AudioStream" uid="uid://i0udppkdmyhf" path="res://assets/sounds/tap.wav" id="12_jusjj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eastt"]
 texture = ExtResource("2_5kl4w")
@@ -2534,6 +2535,11 @@ process_mode = 3
 stream = ExtResource("11_aso24")
 autoplay = true
 parameters/looping = true
+
+[node name="Interact" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("12_jusjj")
+volume_db = -8.0
 
 [connection signal="body_entered" from="Area2D_desk" to="Area2D_desk" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D_desk" to="Area2D_desk" method="_on_body_exited"]
