@@ -119,10 +119,12 @@ layout_mode = 2
 alignment = 1
 
 [node name="YesButton" type="Button" parent="PanelContainer/MarginContainer/MainVBox/HBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Yes"
 
 [node name="NoButton" type="Button" parent="PanelContainer/MarginContainer/MainVBox/HBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "No"
 
