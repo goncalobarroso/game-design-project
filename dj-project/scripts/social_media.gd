@@ -1,5 +1,8 @@
 extends Control
+
 @onready var post_container = $PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer
+@onready var footer_label = $PanelContainer/VBoxContainer/Footer/Label
+
 var PostScene = preload("res://scenes/post.tscn")
 var YourPostsScene = preload("res://scenes/your_post.tscn")
 var AddPostScene = preload("res://scenes/add_post.tscn")
@@ -7,6 +10,8 @@ var view = "feed"
 
 func _ready():
 	update_view()
+	FollowerManager.connect("followers_updated", Callable(self, "_on_followers_updated"))
+	_on_followers_updated(Global.followers)
 	
 func update_view():
 	for child in post_container.get_children():
@@ -73,3 +78,6 @@ func _on_posts_pressed() -> void:
 	
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/home.tscn")
+	
+func _on_followers_updated(followers: int):
+	footer_label.text = "Followers: " + str(followers)
