@@ -15,11 +15,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_accumulator += delta * time_speed
-
+	
 	if time_accumulator >= 1.0:
 		time_accumulator -= 1.0
 		advance_time()
-
+	
 func advance_time():
 	FollowerManager.tick_hour()
 	hour += 1

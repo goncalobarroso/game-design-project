@@ -1,14 +1,17 @@
 extends Control
 
 var user_reactions = {}
+var traits = {}
+
 
 func _ready():
 	load_reactions()
 	update_reaction_ui()
 
-func set_user_data(username: String, post_text: String, image_path: String, id: String):
+func set_user_data(username: String, post_text: String, image_path: String, id: String, post_traits: Dictionary):
 	print("Setting post data for: ", username)
-	
+	traits = post_traits
+	print(traits)
 	$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/username.text = username
 	$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/post.text = post_text
 	self.set_meta("id", id)
@@ -25,12 +28,12 @@ func _on_like_pressed() -> void:
 	var post_id = get_meta("id")
 
 	if user_reactions.has(post_id):
-		if user_reactions[post_id] == "like":
-			clear_reaction(post_id)
-		else:
-			like_post(post_id)
+		return
 	else:
 		like_post(post_id)
+
+	var total_gain := calculate_follower_gain(traits, "like")
+	FollowerManager.schedule_gain(total_gain)
 	
 	save_reactions()
 	update_reaction_ui()
@@ -39,12 +42,12 @@ func _on_dislike_pressed() -> void:
 	load_reactions()
 	var post_id = get_meta("id")
 	if user_reactions.has(post_id):
-		if user_reactions[post_id] == "dislike":
-			clear_reaction(post_id)
-		else:			
-			dislike_post(post_id)
+		return
 	else:
 		dislike_post(post_id)
+		
+	var total_gain := calculate_follower_gain(traits, "dislike")
+	FollowerManager.schedule_gain(total_gain)
 
 	save_reactions()
 	update_reaction_ui()
@@ -85,13 +88,42 @@ func update_reaction_ui():
 	
 	var like_button = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Like
 	var dislike_button = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Dislike
-
+	
 	if reaction == "like":
 		like_button.modulate = Color(0.2, 1, 0.2)  # Green highlight
 		dislike_button.modulate = Color(1, 1, 1)   # Reset
+		like_button.disabled = true
+		dislike_button.disabled = true
 	elif reaction == "dislike":
 		like_button.modulate = Color(1, 1, 1)
 		dislike_button.modulate = Color(1, 0.2, 0.2)  # Red highlight
+		like_button.disabled = true
+		dislike_button.disabled = true
 	elif reaction == "none":
 		like_button.modulate = Color(1, 1, 1)
 		dislike_button.modulate = Color(1, 1, 1)
+
+func calculate_follower_gain(traits: Dictionary, reaction: String) -> int:
+	var base_gain := 100.0  # Base number of followers
+	var total_gain := 0.0
+
+	# Determine if the post is negative or positive
+	var negativity: float = clamp(traits["controversy"] - traits["constructiveness"], 0.0, 10.0)
+	var negativity_multiplier: float = 1.0 + (negativity / 10.0)
+
+	total_gain = base_gain * negativity_multiplier
+
+	var is_negative : bool = traits["controversy"] > traits["constructiveness"]
+
+	if is_negative:
+		# Negative post
+		if reaction == "like":
+			return int(total_gain)  # Gain followers
+		else:
+			return -int(total_gain)  # Lose followers
+	else:
+		# Positive post
+		if reaction == "like":
+			return -int(total_gain)  # Lose followers
+		else:
+			return int(total_gain)  # Gain followers

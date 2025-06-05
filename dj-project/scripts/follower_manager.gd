@@ -3,6 +3,7 @@ extends Node
 var pending_gains: Array = []
 
 const PENDING_GAINS_FILE := "res://data/pending_gains.json"
+const GAIN_MULTIPLIER := 100
 
 signal followers_updated(followers)
 
@@ -23,10 +24,14 @@ func tick_hour():
 	var updated = false
 	for gain in pending_gains:
 		if gain["remaining_hours"] > 0:
-			increase_followers(gain["gain_per_hour"])
+			if gain["remaining_hours"] == 24:
+				increase_followers(gain["gain_per_hour"] * GAIN_MULTIPLIER)
+			else:
+				increase_followers(gain["gain_per_hour"])
 			gain["remaining_hours"] -= 1
-			print("Added %d followers!" % gain["gain_per_hour"])
-			print("Followers: %d" % Global.followers)
+			#print("Added %d followers!" % gain["gain_per_hour"])
+			#print("%d hours remaining!" % gain["remaining_hours"])
+			#print("Followers: %d" % Global.followers)
 			updated = true
 
 	# Remove finished gains

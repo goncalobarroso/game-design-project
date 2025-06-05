@@ -14,17 +14,17 @@ script = ExtResource("1_qpvh6")
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 115.0
-offset_top = 2.0
 offset_right = 195.0
-offset_bottom = 25.0
+offset_bottom = 23.0
 scale = Vector2(2.01212, 2.00543)
 text = "Day 0, 00h"
 
 [node name="FollowerLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 990.0
-offset_top = 3.0
-offset_right = 1070.0
-offset_bottom = 26.0
+offset_left = 441.0
+offset_right = 521.0
+offset_bottom = 23.0
 scale = Vector2(2.01212, 2.00543)
 text = "Followers"
+horizontal_alignment = 1
+vertical_alignment = 1
