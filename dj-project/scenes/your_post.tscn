@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://fer8gkeix5td"]
+
+[ext_resource type="Script" uid="uid://lt504cja7kxc" path="res://scripts/your_post.gd" id="1_2ygae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epv1v"]
+bg_color = Color(0.901902, 0.362704, 0.748054, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_epv1v"]
+font_size = 12
+font_color = Color(0.478213, 0.697441, 0.962585, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ax5sd"]
+font_size = 12
+font_color = Color(0.390954, 0.201241, 0.52865, 1)
+
+[node name="Post" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2ygae")
+metadata/_edit_use_anchors_ = true
+metadata/like = false
+metadata/dislike = false
+metadata/id = ""
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+scale = Vector2(1.11435, 1.3551)
+theme_override_styles/panel = SubResource("StyleBoxFlat_epv1v")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="username" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "username teste"
+label_settings = SubResource("LabelSettings_epv1v")
+
+[node name="post" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "post test"
+label_settings = SubResource("LabelSettings_ax5sd")
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controversy: 0 Emotionality: 0 Constructiveness: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

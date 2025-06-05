@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://c62bakn8bjmyk"]
+
+[ext_resource type="Script" uid="uid://caw2kkih6ktma" path="res://scripts/hud.gd" id="1_qpvh6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpvh6")
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 2.0
+offset_right = 195.0
+offset_bottom = 25.0
+scale = Vector2(2.01212, 2.00543)
+text = "Day 0, 00h"
+
+[node name="FollowerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 3.0
+offset_right = 1070.0
+offset_bottom = 26.0
+scale = Vector2(2.01212, 2.00543)
+text = "Followers"

@@ -1,0 +1,102 @@
+[
+  {
+	"id": "1",
+	"user": "Alice",
+	"content": "I can't believe this is actually happening...",
+	"traits": {
+	  "controversy": 9.0,
+	  "emotionality": 8.0,
+	  "constructiveness": 2.0
+	}
+  },
+  {
+	"id": "2",
+	"user": "Bob",
+	"content": "Such a wholesome day today 😊",
+	"traits": {
+	  "controversy": 1.0,
+	  "emotionality": 7.0,
+	  "constructiveness": 5.0
+	}
+  },
+  {
+	"id": "3",
+	"user": "Charlie",
+	"content": "Is anyone else mad about the latest update?",
+	"traits": {
+	  "controversy": 8.0,
+	  "emotionality": 7.0,
+	  "constructiveness": 3.0
+	}
+  },
+  {
+	"id": "4",
+	"user": "Dana",
+	"content": "Check out this beautiful sunset I captured!",
+	"traits": {
+	  "controversy": 1.0,
+	  "emotionality": 6.0,
+	  "constructiveness": 4.0
+	}
+  },
+  {
+	"id": "5",
+	"user": "Eve",
+	"content": "Learned so much from this video!",
+	"traits": {
+	  "controversy": 2.0,
+	  "emotionality": 5.0,
+	  "constructiveness": 8.0
+	}
+  },
+  {
+	"id": "6",
+	"user": "Frank",
+	"content": "This is why we can't have nice things 😂",
+	"traits": {
+	  "controversy": 6.0,
+	  "emotionality": 6.0,
+	  "constructiveness": 2.0
+	}
+  },
+  {
+	"id": "7",
+	"user": "Grace",
+	"content": "Feeling down today...",
+	"traits": {
+	  "controversy": 1.0,
+	  "emotionality": 7.0,
+	  "constructiveness": 2.0
+	}
+  },
+  {
+	"id": "8",
+	"user": "Henry",
+	"content": "You're all going to regret this decision.",
+	"traits": {
+	  "controversy": 9.0,
+	  "emotionality": 9.0,
+	  "constructiveness": 1.0
+	}
+  },
+  {
+	"id": "9",
+	"user": "Ivy",
+	"content": "Sending love to everyone out there ❤️",
+	"traits": {
+	  "controversy": 1.0,
+	  "emotionality": 9.0,
+	  "constructiveness": 5.0
+	}
+  },
+  {
+	"id": "10",
+	"user": "Jack",
+	"content": "This makes me sick. Absolutely disgusting.",
+	"traits": {
+	  "controversy": 9.0,
+	  "emotionality": 9.0,
+	  "constructiveness": 1.0
+	}
+  }
+]

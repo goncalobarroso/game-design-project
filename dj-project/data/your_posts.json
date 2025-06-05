@@ -1,0 +1,35 @@
+[
+	{
+		"content": "This won’t stir anything up and I feel completely indifferent and there's no point in trying to fix it.",
+		"day": 1.0,
+		"id": "1",
+		"traits": {
+			"constructiveness": 0.0,
+			"controversy": 0.0,
+			"emotionality": 0.0
+		},
+		"user": "<user>"
+	},
+	{
+		"content": "This won’t stir anything up and I feel completely indifferent and there's no point in trying to fix it.",
+		"day": 1.0,
+		"id": "2",
+		"traits": {
+			"constructiveness": 0.0,
+			"controversy": 0.0,
+			"emotionality": 0.0
+		},
+		"user": "<user>"
+	},
+	{
+		"content": "This won’t stir anything up and I feel completely indifferent and there's no point in trying to fix it.",
+		"day": 1,
+		"id": "3",
+		"traits": {
+			"constructiveness": 0.0,
+			"controversy": 0.0,
+			"emotionality": 0.0
+		},
+		"user": "<user>"
+	}
+]

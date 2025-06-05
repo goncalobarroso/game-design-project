@@ -1,0 +1,30 @@
+X = feito
+
+adicionar sons que forem precisos à lista para eu saber o que fazer
+
+-henrique
+
+
+sfx/foley
+
+passos X
+porta X
+sentar cadeira X
+teclado X
+bleep para social media X
+
+
+
+ambience
+
+escritório X
+casa X
+cidade X
+
+musica
+
+menu X
+escritório X
+casa
+cidade
+loja? 

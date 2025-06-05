@@ -1,0 +1,38 @@
+{
+  "controversy": [
+	{ "threshold": 0, "text": "This won’t stir anything up" },
+	{ "threshold": 1, "text": "Everyone will probably agree" },
+	{ "threshold": 2, "text": "This is fairly uncontroversial" },
+	{ "threshold": 3, "text": "It might raise a few eyebrows" },
+	{ "threshold": 4, "text": "Some people might disagree" },
+	{ "threshold": 5, "text": "This could spark a discussion" },
+	{ "threshold": 6, "text": "This take is a bit risky" },
+	{ "threshold": 7, "text": "People are going to argue about this" },
+	{ "threshold": 8, "text": "This will definitely start a debate" },
+	{ "threshold": 9, "text": "This is really going to upset people" }
+  ],
+  "emotionality": [
+	{ "threshold": 0, "text": "and I feel completely indifferent" },
+	{ "threshold": 1, "text": "and it’s just another topic to me" },
+	{ "threshold": 2, "text": "and it doesn’t really affect me" },
+	{ "threshold": 3, "text": "and I have a mild opinion on it" },
+	{ "threshold": 4, "text": "and I care a little about this" },
+	{ "threshold": 5, "text": "and I’m somewhat invested emotionally" },
+	{ "threshold": 6, "text": "and it hits close to home" },
+	{ "threshold": 7, "text": "and it stirs something in me" },
+	{ "threshold": 8, "text": "and it honestly feels personal" },
+	{ "threshold": 9, "text": "and it overwhelms me emotionally" }
+  ],
+  "constructiveness": [
+	{ "threshold": 0, "text": "and there's no point in trying to fix it." },
+	{ "threshold": 1, "text": "and I'm just venting without solutions." },
+	{ "threshold": 2, "text": "and it feels hopeless to address." },
+	{ "threshold": 3, "text": "and I don’t see a way forward." },
+	{ "threshold": 4, "text": "and maybe it’s just how things are." },
+	{ "threshold": 5, "text": "but I think we can at least talk about it." },
+	{ "threshold": 6, "text": "and I believe small steps can help." },
+	{ "threshold": 7, "text": "and I have some ideas to improve it." },
+	{ "threshold": 8, "text": "and I’m confident we can fix this." },
+	{ "threshold": 9, "text": "but maybe we can do something about it." }
+  ]
+}

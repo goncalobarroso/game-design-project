@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://b11dl65fybb0q"]
+
+[ext_resource type="Texture2D" uid="uid://sxv7i4iiyh23" path="res://images/placeholder2.jpg" id="1_c6die"]
+[ext_resource type="Script" uid="uid://cno2wmvq5ioue" path="res://scripts/add_post.gd" id="1_gsi8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq7fg"]
+bg_color = Color(0.901902, 0.362704, 0.748054, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6die"]
+font_size = 12
+font_color = Color(0.478213, 0.697441, 0.962585, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_588hm"]
+font_size = 12
+font_color = Color(0.390954, 0.201241, 0.52865, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(54, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_gsi8d")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fq7fg")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Posts available: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_c6die")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="username" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "<your username>"
+label_settings = SubResource("LabelSettings_c6die")
+
+[node name="post" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "<post text>
+"
+label_settings = SubResource("LabelSettings_588hm")
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Customize post traits"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Controversy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControversyValue" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="ControversySlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 9.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+text = "Emotionality"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmotionalityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="EmotionalitySlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 9.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+text = "Constructiveness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContructivenessLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="ConstructivenessSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 9.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="GeneratePost" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Generate post"
+
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ControversySlider" to="." method="_on_controversy_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/EmotionalitySlider" to="." method="_on_emotionality_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ConstructivenessSlider" to="." method="_on_constructiveness_slider_value_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GeneratePost" to="." method="_on_generate_post_pressed"]
