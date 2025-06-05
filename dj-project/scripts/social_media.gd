@@ -29,25 +29,27 @@ func load_posts_from_json(json_path: String, flag: bool):
 				var username = post.get("user", "Unknown")
 				var content = post.get("content", "")
 				var id = post.get("id", "0")
-				add_post(username, content, "res://images/placeholder2.jpg", id, flag)
+				if flag:
+					var traits = post.get("traits")
+					add_your_post(username, content, "res://images/placeholder2.jpg", id, traits)
+				else:
+					add_post(username, content, "res://images/placeholder2.jpg", id)
 		else:
 			print("Error: JSON is not an array.")
 	else:
 		print("Failed to open JSON file at %s" % json_path)
 
-func add_post(username: String, text: String, image_path: String, id: String, flag: bool):
-	if flag:
+func add_your_post(username: String, text: String, image_path: String, id: String, traits: Dictionary):
 		var post_instance = YourPostsScene.instantiate()
 		
-		post_instance.set_user_data(username, text, image_path, id)
+		post_instance.set_user_data(username, text, image_path, id, traits)
 		post_container.add_child(post_instance)
-	else:
+
+func add_post(username: String, text: String, image_path: String, id: String):
 		var post_instance = PostScene.instantiate()
 		
 		post_instance.set_user_data(username, text, image_path, id)
 		post_container.add_child(post_instance)
-	
-
 
 func add_add_post():
 	var add_post_instance = AddPostScene.instantiate()
