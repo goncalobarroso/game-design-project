@@ -19,7 +19,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("interact"):
-		print("Pressed E on bed!")
+		$"../Interact".play()
 		if can_sleep():
 			GameClock.advance_day()
 		

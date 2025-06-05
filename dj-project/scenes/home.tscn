@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://w2yuu50uh2bk"]
+[gd_scene load_steps=20 format=3 uid="uid://w2yuu50uh2bk"]
 
 [ext_resource type="PackedScene" uid="uid://de8o1scq8owuy" path="res://scenes/player.tscn" id="1_krot7"]
 [ext_resource type="PackedScene" uid="uid://c62bakn8bjmyk" path="res://scenes/HUD.tscn" id="2_hhep5"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ccdqffwm6isho" path="res://scenes/scene_menu.tscn" id="8_4fycn"]
 [ext_resource type="Script" uid="uid://dyqa87njqcs5y" path="res://scripts/area_2d_desk_home.gd" id="8_vc333"]
 [ext_resource type="PackedScene" uid="uid://mownvchibqdk" path="res://scenes/menu.tscn" id="9_vc333"]
+[ext_resource type="AudioStream" uid="uid://bjasgy1mtbmj7" path="res://sound/ambiente/quarto_ambiance.mp3" id="11_cmjdo"]
+[ext_resource type="AudioStream" uid="uid://i0udppkdmyhf" path="res://assets/sounds/tap.wav" id="12_yu5fn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mahjx"]
 texture = ExtResource("2_w18ys")
@@ -2533,6 +2535,17 @@ offset_left = -72.0
 offset_top = 24.0
 offset_right = -72.0
 offset_bottom = 24.0
+
+[node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("11_cmjdo")
+autoplay = true
+parameters/looping = true
+
+[node name="Interact" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("12_yu5fn")
+volume_db = -8.0
 
 [connection signal="body_entered" from="Area2D_door" to="Area2D_door" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D_door" to="Area2D_door" method="_on_body_exited"]

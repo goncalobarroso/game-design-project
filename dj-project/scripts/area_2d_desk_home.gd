@@ -19,6 +19,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("interact"):
+		$"../Interact".play()
 		GameState.player_position = $"../Player".global_position
 		get_tree().change_scene_to_file("res://scenes/social_media.tscn")
 		print("E pressed on desk!")
